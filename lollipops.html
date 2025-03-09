@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lollipops</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .product {
+        display: block;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 800px) {
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .filter {
+        width: 250px;
+        min-width: 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">Sweets</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products">
+      <div class="container">
+        <h2>Lollipops</h2>
+
+        <div class="filter-container">
+          <div class="filter">
+            <h3>Filter</h3>
+            <label for="min-price">Min Price:</label>
+            <input
+              type="range"
+              id="min-price"
+              name="min-price"
+              min="0"
+              max="500"
+              value="0"
+            />
+            <span id="min-price-value">0</span> грн<br />
+
+            <label for="max-price">Max Price:</label>
+            <input
+              type="range"
+              id="max-price"
+              name="max-price"
+              min="0"
+              max="500"
+              value="500"
+            />
+            <span id="max-price-value">500</span> грн<br />
+
+            <button id="apply-filter">Apply Filter</button>
+          </div>
+
+          <div class="product-grid" id="product-grid">
+            <div class="product" data-price="150">
+              <img src="./Project_2.turm/tht.jpeg" alt="Classic Lollipops" />
+              <h3>Classic Lollipops</h3>
+              <p class="product-price">150 грн</p>
+              <button
+                class="order-button"
+                data-product="Classic Lollipops"
+                data-price="150"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="170">
+              <img src="./Project_2.turm/thy.jpeg" alt="Fruit Lollipops" />
+              <h3>Fruit Lollipops</h3>
+              <p class="product-price">170 грн</p>
+              <button
+                class="order-button"
+                data-product="Fruit Lollipops"
+                data-price="170"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="160">
+              <img src="./Project_2.turm/thu.jpeg" alt="Sour Lollipops" />
+              <h3>Sour Lollipops</h3>
+              <p class="product-price">160 грн</p>
+              <button
+                class="order-button"
+                data-product="Sour Lollipops"
+                data-price="160"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="200">
+              <img src="./Project_2.turm/thi.jpeg" alt="Giant Lollipops" />
+              <h3>Giant Lollipops</h3>
+              <p class="product-price">200 грн</p>
+              <button
+                class="order-button"
+                data-product="Giant Lollipops"
+                data-price="200"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="180">
+              <img
+                src="./Project_2.turm/CaramelLollipops_0212.jpg"
+                alt="Caramel Lollipops"
+              />
+              <h3>Caramel Lollipops</h3>
+              <p class="product-price">180 грн</p>
+              <button
+                class="order-button"
+                data-product="Caramel Lollipops"
+                data-price="180"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="210">
+              <img
+                src="./Project_2.turm/hs-chocolate-oval_1024x1024.jpg.webp"
+                alt="Chocolate Lollipops"
+              />
+              <h3>Chocolate Lollipops</h3>
+              <p class="product-price">210 грн</p>
+              <button
+                class="order-button"
+                data-product="Chocolate Lollipops"
+                data-price="210"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="190">
+              <img
+                src="./Project_2.turm/63ee9831d36d501671380672-rainbow-swirl-lollipop-mixed-fruit.jpg"
+                alt="Rainbow Lollipops"
+              />
+              <h3>Rainbow Lollipops</h3>
+              <p class="product-price">190 грн</p>
+              <button
+                class="order-button"
+                data-product="Rainbow Lollipops"
+                data-price="190"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="220">
+              <img src="./Project_2.turm/images9.png" alt="Swirl Lollipops" />
+              <h3>Swirl Lollipops</h3>
+              <p class="product-price">220 грн</p>
+              <button
+                class="order-button"
+                data-product="Swirl Lollipops"
+                data-price="220"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="165">
+              <img
+                src="./Project_2.turm/il_fullxfull.1479836397_mosa.jpg.webp"
+                alt="Strawberry Lollipops"
+              />
+              <h3>Strawberry Lollipops</h3>
+              <p class="product-price">165 грн</p>
+              <button
+                class="order-button"
+                data-product="Strawberry Lollipops"
+                data-price="165"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="200">
+              <img
+                src="./Project_2.turm/Handmade-Orange-Lollipops.webp.jpeg"
+                alt="Orange Lollipops"
+              />
+              <h3>Orange Lollipops</h3>
+              <p class="product-price">200 грн</p>
+              <button
+                class="order-button"
+                data-product="Orange Lollipops"
+                data-price="200"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="175">
+              <img src="./Project_2.turm/images10.jpg" alt="Lollipop Rings" />
+              <h3>Lollipop Rings</h3>
+              <p class="product-price">175 грн</p>
+              <button
+                class="order-button"
+                data-product="Lollipop Rings"
+                data-price="175"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="190">
+              <img
+                src="./Project_2.turm/81ub6rS9reL.jpg"
+                alt="Pomegranate Lollipops"
+              />
+              <h3>Pomegranate Lollipops</h3>
+              <p class="product-price">190 грн</p>
+              <button
+                class="order-button"
+                data-product="Pomegranate Lollipops"
+                data-price="190"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="order-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Order</h2>
+        <p id="modal-product-name"></p>
+        <p id="modal-product-price"></p>
+        <form id="order-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="quantity">Quantity:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1"
+            min="1"
+            required
+          /><br /><br />
+
+          <button type="submit">Order</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById("order-modal");
+      const closeButton = document.querySelector(".close-button");
+      const modalProductName = document.getElementById("modal-product-name");
+      const modalProductPrice = document.getElementById("modal-product-price");
+      const orderForm = document.getElementById("order-form");
+
+      const orderButtons = document.querySelectorAll(".order-button");
+      orderButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const product = button.dataset.product;
+          const price = button.dataset.price;
+
+          modalProductName.textContent = `Product: ${product}`;
+          modalProductPrice.textContent = `Price: ${price} грн`;
+          modal.style.display = "block";
+        });
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      orderForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Order placed!");
+        modal.style.display = "none";
+        orderForm.reset();
+      });
+    </script>
+  </body>
+</html>

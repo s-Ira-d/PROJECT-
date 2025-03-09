@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chocolate Bars</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .product {
+        display: block;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 800px) {
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .filter {
+        width: 250px;
+        min-width: 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">Sweets</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products">
+      <div class="container">
+        <h2>Chocolate Bars</h2>
+
+        <div class="filter-container">
+          <div class="filter">
+            <h3>Filter</h3>
+            <label for="min-price">Min Price:</label>
+            <input
+              type="range"
+              id="min-price"
+              name="min-price"
+              min="0"
+              max="500"
+              value="0"
+            />
+            <span id="min-price-value">0</span> грн<br />
+
+            <label for="max-price">Max Price:</label>
+            <input
+              type="range"
+              id="max-price"
+              name="max-price"
+              min="0"
+              max="500"
+              value="500"
+            />
+            <span id="max-price-value">500</span> грн<br />
+
+            <button id="apply-filter">Apply Filter</button>
+          </div>
+
+          <div class="product-grid" id="product-grid">
+            <div class="product" data-price="250">
+              <img src="./Project_2.turm/thnn.jpeg" alt="White Chocolate" />
+              <h3>White Chocolate</h3>
+              <p class="product-price">250 грн</p>
+              <button
+                class="order-button"
+                data-product="White Chocolate"
+                data-price="250"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="280">
+              <img
+                src="./Project_2.turm/thjhb.jpeg"
+                alt="Chocolate with Hazelnuts"
+              />
+              <h3>Chocolate with Hazelnuts</h3>
+              <p class="product-price">280 грн</p>
+              <button
+                class="order-button"
+                data-product="Chocolate with Hazelnuts"
+                data-price="280"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="220">
+              <img src="./Project_2.turm/thп.jpeg" alt="Dark Chocolate" />
+              <h3>Dark Chocolate</h3>
+              <p class="product-price">220 грн</p>
+              <button
+                class="order-button"
+                data-product="Dark Chocolate"
+                data-price="220"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="300">
+              <img src="./Project_2.turm/th.jpeg" alt="Milk Chocolate" />
+              <h3>Milk Chocolate</h3>
+              <p class="product-price">300 грн</p>
+              <button
+                class="order-button"
+                data-product="Milk Chocolate"
+                data-price="300"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="270">
+              <img
+                src="./Project_2.turm/Chocolate-Covered-Strawberries-8.jpg"
+                alt="Strawberry in Chocolate"
+              />
+              <h3>Strawberry in Chocolate</h3>
+              <p class="product-price">270 грн</p>
+              <button
+                class="order-button"
+                data-product="Strawberry in Chocolate"
+                data-price="270"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="290">
+              <img src="./Project_2.turm/images.jpg" alt="Mint Chocolate" />
+              <h3>Mint Chocolate</h3>
+              <p class="product-price">290 грн</p>
+              <button
+                class="order-button"
+                data-product="Mint Chocolate"
+                data-price="290"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="260">
+              <img src="./Project_2.turm/images2.jpg" alt="Orange Chocolate" />
+              <h3>Orange Chocolate</h3>
+              <p class="product-price">260 грн</p>
+              <button
+                class="order-button"
+                data-product="Orange Chocolate"
+                data-price="260"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="310">
+              <img src="./Project_2.turm/images3.jpg" alt="Almond Chocolate" />
+              <h3>Almond Chocolate</h3>
+              <p class="product-price">310 грн</p>
+              <button
+                class="order-button"
+                data-product="Almond Chocolate"
+                data-price="310"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="240">
+              <img
+                src="./Project_2.turm/images4.jpg"
+                alt="White Chocolate in Cookies"
+              />
+              <h3>White Chocolate in Cookies</h3>
+              <p class="product-price">240 грн</p>
+              <button
+                class="order-button"
+                data-product="White Chocolate in Cookies"
+                data-price="240"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="280">
+              <img
+                src="./Project_2.turm/DC-Sea-Salt_sq-scaled.jpg"
+                alt="Dark Chocolate with Sea Salt"
+              />
+              <h3>Dark Chocolate with Sea Salt</h3>
+              <p class="product-price">280 грн</p>
+              <button
+                class="order-button"
+                data-product="Dark Chocolate with Sea Salt"
+                data-price="280"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="290">
+              <img
+                src="./Project_2.turm/IMG_1784.jpg.webp"
+                alt="Milk Chocolate with Caramel Swirl"
+              />
+              <h3>Milk Chocolate with Caramel Swirl</h3>
+              <p class="product-price">290 грн</p>
+              <button
+                class="order-button"
+                data-product="Milk Chocolate with Caramel Swirl"
+                data-price="290"
+              >
+                Order Now
+              </button>
+            </div>
+            <div class="product" data-price="320">
+              <img
+                src="./Project_2.turm/images5.jpg"
+                alt="Dark Chocolate with Raspberry"
+              />
+              <h3>Dark Chocolate with Raspberry</h3>
+              <p class="product-price">320 грн</p>
+              <button
+                class="order-button"
+                data-product="Dark Chocolate with Raspberry"
+                data-price="320"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="order-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Order</h2>
+        <p id="modal-product-name"></p>
+        <p id="modal-product-price"></p>
+        <form id="order-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="quantity">Quantity:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1"
+            min="1"
+            required
+          /><br /><br />
+
+          <button type="submit">Order</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const minPriceInput = document.getElementById("min-price");
+      const maxPriceInput = document.getElementById("max-price");
+      const minPriceValue = document.getElementById("min-price-value");
+      const maxPriceValue = document.getElementById("max-price-value");
+      const applyFilterButton = document.getElementById("apply-filter");
+      const productGrid = document.getElementById("product-grid");
+      const orderButtons = document.querySelectorAll(".order-button");
+      const modal = document.getElementById("order-modal");
+      const closeButton = document.querySelector(".close-button");
+      const modalProductName = document.getElementById("modal-product-name");
+      const modalProductPrice = document.getElementById("modal-product-price");
+      const orderForm = document.getElementById("order-form");
+
+      minPriceInput.addEventListener("input", () => {
+        minPriceValue.textContent = minPriceInput.value;
+      });
+
+      maxPriceInput.addEventListener("input", () => {
+        maxPriceValue.textContent = maxPriceInput.value;
+      });
+
+      applyFilterButton.addEventListener("click", () => {
+        const minPrice = parseInt(minPriceInput.value);
+        const maxPrice = parseInt(maxPriceInput.value);
+
+        const filteredProducts = Array.from(productGrid.children).filter(
+          (product) => {
+            const productPrice = parseInt(product.dataset.price);
+            return productPrice >= minPrice && productPrice <= maxPrice;
+          }
+        );
+
+        productGrid.innerHTML = "";
+        filteredProducts.forEach((product) => productGrid.appendChild(product));
+      });
+
+      orderButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const product = button.dataset.product;
+          const price = button.dataset.price;
+
+          modalProductName.textContent = `Product: ${product}`;
+          modalProductPrice.textContent = `Price: ${price} грн`;
+          modal.style.display = "block";
+        });
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      orderForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Order placed!");
+        modal.style.display = "none";
+        orderForm.reset();
+      });
+    </script>
+  </body>
+</html>

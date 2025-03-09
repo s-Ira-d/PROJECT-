@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Жувальні ведмедики</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .product {
+        display: block;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 800px) {
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .filter {
+        width: 250px;
+        min-width: 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">Солодощі</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index2.html#products">Продукти</a></li>
+            <li><a href="index2.html#about">Про нас</a></li>
+            <li><a href="index2.html#contact">Контакти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products">
+      <div class="container">
+        <h2>Жувальні ведмедики</h2>
+
+        <div class="filter-container">
+          <div class="filter">
+            <h3>Фільтр</h3>
+            <label for="min-price">Мінімальна ціна:</label>
+            <input
+              type="range"
+              id="min-price"
+              name="min-price"
+              min="0"
+              max="500"
+              value="0"
+            />
+            <span id="min-price-value">0</span> грн<br />
+
+            <label for="max-price">Максимальна ціна:</label>
+            <input
+              type="range"
+              id="max-price"
+              name="max-price"
+              min="0"
+              max="500"
+              value="500"
+            />
+            <span id="max-price-value">500</span> грн<br />
+
+            <button id="apply-filter">Застосувати фільтр</button>
+          </div>
+
+          <div class="product-grid">
+            <div class="product" data-price="180">
+              <img
+                src="./Project_2.turm/thй.jpeg"
+                alt="Класичні жувальні ведмедики"
+              />
+              <h3>Класичні жувальні ведмедики</h3>
+              <p class="product-price">180 грн</p>
+              <button
+                class="order-button"
+                data-product="Класичні жувальні ведмедики"
+                data-price="180"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="200">
+              <img
+                src="./Project_2.turm/thw.jpeg"
+                alt="Фруктові жувальні ведмедики"
+              />
+              <h3>Фруктові жувальні ведмедики</h3>
+              <p class="product-price">200 грн</p>
+              <button
+                class="order-button"
+                data-product="Фруктові жувальні ведмедики"
+                data-price="200"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="190">
+              <img
+                src="./Project_2.turm/the.jpeg"
+                alt="Кислі жувальні ведмедики"
+              />
+              <h3>Кислі жувальні ведмедики</h3>
+              <p class="product-price">190 грн</p>
+              <button
+                class="order-button"
+                data-product="Кислі жувальні ведмедики"
+                data-price="190"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="250">
+              <img
+                src="./Project_2.turm/thr.jpeg"
+                alt="Гігантські жувальні ведмедики"
+              />
+              <h3>Гігантські жувальні ведмедики</h3>
+              <p class="product-price">250 грн</p>
+              <button
+                class="order-button"
+                data-product="Гігантські жувальні ведмедики"
+                data-price="250"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="210">
+              <img
+                src="./Project_2.turm/50114-strawberry__62689.jpg"
+                alt="Полуничні жувальні ведмедики"
+              />
+              <h3>Полуничні жувальні ведмедики</h3>
+              <p class="product-price">210 грн</p>
+              <button
+                class="order-button"
+                data-product="Полуничні жувальні ведмедики"
+                data-price="210"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="230">
+              <img
+                src="./Project_2.turm/50141_berry-red-gummi-raspberries__82705.png"
+                alt="Малина жувальні ведмедики"
+              />
+              <h3>Малина жувальні ведмедики</h3>
+              <p class="product-price">230 грн</p>
+              <button
+                class="order-button"
+                data-product="Малина жувальні ведмедики"
+                data-price="230"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="220">
+              <img
+                src="./Project_2.turm/images6.jpg"
+                alt="Чорничні жувальні ведмедики"
+              />
+              <h3>Чорничні жувальні ведмедики</h3>
+              <p class="product-price">220 грн</p>
+              <button
+                class="order-button"
+                data-product="Чорничні жувальні ведмедики"
+                data-price="220"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="240">
+              <img
+                src="./Project_2.turm/50106-orange__54747.jpg"
+                alt="Апельсинові жувальні ведмедики"
+              />
+              <h3>Апельсинові жувальні ведмедики</h3>
+              <p class="product-price">240 грн</p>
+              <button
+                class="order-button"
+                data-product="Апельсинові жувальні ведмедики"
+                data-price="240"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="200">
+              <img
+                src="./Project_2.turm/50108-pineapple__83425.jpg"
+                alt="Ананасові жувальні ведмедики"
+              />
+              <h3>Ананасові жувальні ведмедики</h3>
+              <p class="product-price">200 грн</p>
+              <button
+                class="order-button"
+                data-product="Ананасові жувальні ведмедики"
+                data-price="200"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="190">
+              <img
+                src="./Project_2.turm/images7.jpg"
+                alt="Лимонні жувальні ведмедики"
+              />
+              <h3>Лимонні жувальні ведмедики</h3>
+              <p class="product-price">190 грн</p>
+              <button
+                class="order-button"
+                data-product="Лимонні жувальні ведмедики"
+                data-price="190"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="210">
+              <img
+                src="./Project_2.turm/lime_gummy_bears_1.webp"
+                alt="Лаймові жувальні ведмедики"
+              />
+              <h3>Лаймові жувальні ведмедики</h3>
+              <p class="product-price">210 грн</p>
+              <button
+                class="order-button"
+                data-product="Лаймові жувальні ведмедики"
+                data-price="210"
+              >
+                Замовити зараз
+              </button>
+            </div>
+
+            <div class="product" data-price="230">
+              <img
+                src="./Project_2.turm/images8.jpg"
+                alt="Кавунові жувальні ведмедики"
+              />
+              <h3>Кавунові жувальні ведмедики</h3>
+              <p class="product-price">230 грн</p>
+              <button
+                class="order-button"
+                data-product="Кавунові жувальні ведмедики"
+                data-price="230"
+              >
+                Замовити зараз
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="order-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Замовлення</h2>
+        <p id="modal-product-name"></p>
+        <p id="modal-product-price"></p>
+        <form id="order-form">
+          <label for="name">Ім'я:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+
+          <label for="email">Електронна пошта:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="quantity">Кількість:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1"
+            min="1"
+            required
+          /><br /><br />
+
+          <button type="submit">Замовити</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const minPriceInput = document.getElementById("min-price");
+      const maxPriceInput = document.getElementById("max-price");
+      const minPriceValue = document.getElementById("min-price-value");
+      const maxPriceValue = document.getElementById("max-price-value");
+      const applyFilterButton = document.getElementById("apply-filter");
+      const productGrid = document.getElementById("product-grid");
+      const orderButtons = document.querySelectorAll(".order-button");
+      const modal = document.getElementById("order-modal");
+      const closeButton = document.querySelector(".close-button");
+      const modalProductName = document.getElementById("modal-product-name");
+      const modalProductPrice = document.getElementById("modal-product-price");
+      const orderForm = document.getElementById("order-form");
+
+      minPriceInput.addEventListener("input", () => {
+        minPriceValue.textContent = minPriceInput.value;
+      });
+
+      maxPriceInput.addEventListener("input", () => {
+        maxPriceValue.textContent = maxPriceInput.value;
+      });
+
+      applyFilterButton.addEventListener("click", () => {
+        const minPrice = parseInt(minPriceInput.value);
+        const maxPrice = parseInt(maxPriceInput.value);
+
+        const filteredProducts = Array.from(productGrid.children).filter(
+          (product) => {
+            const productPrice = parseInt(product.dataset.price);
+            return productPrice >= minPrice && productPrice <= maxPrice;
+          }
+        );
+
+        productGrid.innerHTML = "";
+        filteredProducts.forEach((product) => productGrid.appendChild(product));
+      });
+
+      orderButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const product = button.dataset.product;
+          const price = button.dataset.price;
+
+          modalProductName.textContent = `Продукт: ${product}`;
+          modalProductPrice.textContent = `Ціна: ${price} грн`;
+          modal.style.display = "block";
+        });
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      orderForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Замовлення оформлене!");
+        modal.style.display = "none";
+        orderForm.reset();
+      });
+    </script>
+  </body>
+</html>

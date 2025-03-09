@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Шоколадні плитки</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .product {
+        display: block;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 800px) {
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .filter {
+        width: 250px;
+        min-width: 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">Солодощі</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index2.html#products">Продукти</a></li>
+            <li><a href="index2.html#about">Про нас</a></li>
+            <li><a href="index2.html#contact">Контакти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products">
+      <div class="container">
+        <h2>Шоколадні плитки</h2>
+
+        <div class="filter-container">
+          <div class="filter">
+            <h3>Фільтр</h3>
+            <label for="min-price">Мінімальна ціна:</label>
+            <input
+              type="range"
+              id="min-price"
+              name="min-price"
+              min="0"
+              max="500"
+              value="0"
+            />
+            <span id="min-price-value">0</span> грн<br />
+
+            <label for="max-price">Максимальна ціна:</label>
+            <input
+              type="range"
+              id="max-price"
+              name="max-price"
+              min="0"
+              max="500"
+              value="500"
+            />
+            <span id="max-price-value">500</span> грн<br />
+
+            <button id="apply-filter">Застосувати фільтр</button>
+          </div>
+
+          <div class="product-grid" id="product-grid">
+            <div class="product" data-price="250">
+              <img src="./Project_2.turm/thnn.jpeg" alt="Білий шоколад" />
+              <h3>Білий шоколад</h3>
+              <p class="product-price">250 грн</p>
+              <button
+                class="order-button"
+                data-product="Білий шоколад"
+                data-price="250"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="280">
+              <img
+                src="./Project_2.turm/thjhb.jpeg"
+                alt="Шоколад з лісовим горіхом"
+              />
+              <h3>Шоколад з лісовим горіхом</h3>
+              <p class="product-price">280 грн</p>
+              <button
+                class="order-button"
+                data-product="Шоколад з лісовим горіхом"
+                data-price="280"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="220">
+              <img src="./Project_2.turm/thп.jpeg" alt="Темний шоколад" />
+              <h3>Темний шоколад</h3>
+              <p class="product-price">220 грн</p>
+              <button
+                class="order-button"
+                data-product="Темний шоколад"
+                data-price="220"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="300">
+              <img src="./Project_2.turm/th.jpeg" alt="Молочний шоколад" />
+              <h3>Молочний шоколад</h3>
+              <p class="product-price">300 грн</p>
+              <button
+                class="order-button"
+                data-product="Молочний шоколад"
+                data-price="300"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="270">
+              <img
+                src="./Project_2.turm/Chocolate-Covered-Strawberries-8.jpg"
+                alt="Полуниця в шоколаді"
+              />
+              <h3>Полуниця в шоколаді</h3>
+              <p class="product-price">270 грн</p>
+              <button
+                class="order-button"
+                data-product="Полуниця в шоколаді"
+                data-price="270"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="290">
+              <img src="./Project_2.turm/images.jpg" alt="Мятний шоколад" />
+              <h3>Мятний шоколад</h3>
+              <p class="product-price">290 грн</p>
+              <button
+                class="order-button"
+                data-product="Мятний шоколад"
+                data-price="290"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="260">
+              <img
+                src="./Project_2.turm/images2.jpg"
+                alt="Шоколад з апельсином"
+              />
+              <h3>Шоколад з апельсином</h3>
+              <p class="product-price">260 грн</p>
+              <button
+                class="order-button"
+                data-product="Шоколад з апельсином"
+                data-price="260"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="310">
+              <img
+                src="./Project_2.turm/images3.jpg"
+                alt="Шоколад з мигдалем"
+              />
+              <h3>Шоколад з мигдалем</h3>
+              <p class="product-price">310 грн</p>
+              <button
+                class="order-button"
+                data-product="Шоколад з мигдалем"
+                data-price="310"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="240">
+              <img
+                src="./Project_2.turm/images4.jpg"
+                alt="Білий шоколад в печиві"
+              />
+              <h3>Білий шоколад в печиві</h3>
+              <p class="product-price">240 грн</p>
+              <button
+                class="order-button"
+                data-product="Білий шоколад в печиві"
+                data-price="240"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="280">
+              <img
+                src="./Project_2.turm/DC-Sea-Salt_sq-scaled.jpg"
+                alt="Темний шоколад з морською сіллю"
+              />
+              <h3>Темний шоколад з морською сіллю</h3>
+              <p class="product-price">280 грн</p>
+              <button
+                class="order-button"
+                data-product="Темний шоколад з морською сіллю"
+                data-price="280"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="290">
+              <img
+                src="./Project_2.turm/IMG_1784.jpg.webp"
+                alt="Молочний шоколад з карамельними вкрапленнями"
+              />
+              <h3>Молочний шоколад з карамельними вкрапленнями</h3>
+              <p class="product-price">290 грн</p>
+              <button
+                class="order-button"
+                data-product="Молочний шоколад з карамельними вкрапленнями"
+                data-price="290"
+              >
+                Замовити
+              </button>
+            </div>
+            <div class="product" data-price="320">
+              <img
+                src="./Project_2.turm/images5.jpg"
+                alt="Темний шоколад з малиновим смаком"
+              />
+              <h3>Темний шоколад з малиновим смаком</h3>
+              <p class="product-price">320 грн</p>
+              <button
+                class="order-button"
+                data-product="Темний шоколад з малиновим смаком"
+                data-price="320"
+              >
+                Замовити
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="order-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Замовлення</h2>
+        <p id="modal-product-name"></p>
+        <p id="modal-product-price"></p>
+        <form id="order-form">
+          <label for="name">Ім'я:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+
+          <label for="email">Електронна пошта:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="quantity">Кількість:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1"
+            min="1"
+            required
+          /><br /><br />
+
+          <button type="submit">Замовити</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const minPriceInput = document.getElementById("min-price");
+      const maxPriceInput = document.getElementById("max-price");
+      const minPriceValue = document.getElementById("min-price-value");
+      const maxPriceValue = document.getElementById("max-price-value");
+      const applyFilterButton = document.getElementById("apply-filter");
+      const productGrid = document.getElementById("product-grid");
+      const orderButtons = document.querySelectorAll(".order-button");
+      const modal = document.getElementById("order-modal");
+      const closeButton = document.querySelector(".close-button");
+      const modalProductName = document.getElementById("modal-product-name");
+      const modalProductPrice = document.getElementById("modal-product-price");
+      const orderForm = document.getElementById("order-form");
+
+      minPriceInput.addEventListener("input", () => {
+        minPriceValue.textContent = minPriceInput.value;
+      });
+
+      maxPriceInput.addEventListener("input", () => {
+        maxPriceValue.textContent = maxPriceInput.value;
+      });
+
+      applyFilterButton.addEventListener("click", () => {
+        const minPrice = parseInt(minPriceInput.value);
+        const maxPrice = parseInt(maxPriceInput.value);
+
+        const filteredProducts = Array.from(productGrid.children).filter(
+          (product) => {
+            const productPrice = parseInt(product.dataset.price);
+            return productPrice >= minPrice && productPrice <= maxPrice;
+          }
+        );
+
+        productGrid.innerHTML = "";
+        filteredProducts.forEach((product) => productGrid.appendChild(product));
+      });
+
+      orderButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const product = button.dataset.product;
+          const price = button.dataset.price;
+
+          modalProductName.textContent = `Продукт: ${product}`;
+          modalProductPrice.textContent = `Ціна: ${price} грн`;
+          modal.style.display = "block";
+        });
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      orderForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Замовлення оформлене!");
+        modal.style.display = "none";
+        orderForm.reset();
+      });
+    </script>
+  </body>
+</html>

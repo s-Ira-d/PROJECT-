@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caramels</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .product {
+        display: block;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 800px) {
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .filter {
+        width: 250px;
+        min-width: 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">Sweets</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products">
+      <div class="container">
+        <h2>Caramels</h2>
+
+        <div class="filter-container">
+          <div class="filter">
+            <h3>Filter</h3>
+            <label for="min-price">Min Price:</label>
+            <input
+              type="range"
+              id="min-price"
+              name="min-price"
+              min="0"
+              max="500"
+              value="0"
+            />
+            <span id="min-price-value">0</span> грн<br />
+
+            <label for="max-price">Max Price:</label>
+            <input
+              type="range"
+              id="max-price"
+              name="max-price"
+              min="0"
+              max="500"
+              value="500"
+            />
+            <span id="max-price-value">500</span> грн<br />
+
+            <button id="apply-filter">Apply Filter</button>
+          </div>
+
+          <div class="product-grid" id="product-grid">
+            <div class="product" data-price="150">
+              <img src="./Project_2.turm/thидо.jpeg" alt="Solty Caramels" />
+              <h3>Solty Caramels</h3>
+              <p class="product-price">150 грн</p>
+              <button
+                class="order-button"
+                data-product="Solty Caramels"
+                data-price="150"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="170">
+              <img src="./Project_2.turm/thхш.jpeg" alt="Toffy Caramels" />
+              <h3>Toffy Caramels</h3>
+              <p class="product-price">170 грн</p>
+              <button
+                class="order-button"
+                data-product="Toffy Caramels"
+                data-price="170"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="160">
+              <img src="./Project_2.turm/thпол.jpeg" alt="Classic Caramels" />
+              <h3>Classic Caramels</h3>
+              <p class="product-price">160 грн</p>
+              <button
+                class="order-button"
+                data-product="Classic Caramels"
+                data-price="160"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="200">
+              <img src="./Project_2.turm/thоли.jpeg" alt="Sour Caramels" />
+              <h3>Sour Caramels</h3>
+              <p class="product-price">200 грн</p>
+              <button
+                class="order-button"
+                data-product="Sour Caramels"
+                data-price="200"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="180">
+              <img
+                src="./Project_2.turm/Vanilla-Caramels_1024x1024.jpg.webp"
+                alt="Vanila Caramels"
+              />
+              <h3>Vanila Caramels</h3>
+              <p class="product-price">180 грн</p>
+              <button
+                class="order-button"
+                data-product="Vanila Caramels"
+                data-price="180"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="210">
+              <img
+                src="./Project_2.turm/Fresh-Strawberry-Caramels-Slider.jpeg"
+                alt="Strawberry Caramels"
+              />
+              <h3>Strawberry Caramels</h3>
+              <p class="product-price">210 грн</p>
+              <button
+                class="order-button"
+                data-product="Strawberry Caramels"
+                data-price="210"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="190">
+              <img
+                src="./Project_2.turm/Mixed-Berry-Caramels-05-720x720.jpeg"
+                alt="Raspberry Caramels"
+              />
+              <h3>Raspberry Caramels</h3>
+              <p class="product-price">190 грн</p>
+              <button
+                class="order-button"
+                data-product="Raspberry Caramels"
+                data-price="190"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="220">
+              <img
+                src="./Project_2.turm/caramel-apple-caramels.jpg"
+                alt="Apple Caramels"
+              />
+              <h3>Apple Caramels</h3>
+              <p class="product-price">220 грн</p>
+              <button
+                class="order-button"
+                data-product="Apple Caramels"
+                data-price="220"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="165">
+              <img
+                src="./Project_2.turm/Handcrafted-Organic-Dairy-Vegan-Individually-Wrapped-Soft-Caramels-1-lb-Box-Vanilla_409d21af-e3ca-4430-8fff-af71fe76a087.12c4a35a183f7438171972240dde5743.jpeg.webp"
+                alt="Banana Caramels"
+              />
+              <h3>Banana Caramels</h3>
+              <p class="product-price">165 грн</p>
+              <button
+                class="order-button"
+                data-product="Banana Caramels"
+                data-price="165"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="200">
+              <img
+                src="./Project_2.turm/il_570xN.1587072443_4oz0.jpg.webp"
+                alt="Orange Caramels"
+              />
+              <h3>Orange Caramels</h3>
+              <p class="product-price">200 грн</p>
+              <button
+                class="order-button"
+                data-product="Orange Caramels"
+                data-price="200"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="175">
+              <img
+                src="./Project_2.turm/1x1-pomegranate-caramels-1.jpg"
+                alt="Pomegranate Caramels"
+              />
+              <h3>Pomegranate Caramels</h3>
+              <p class="product-price">175 грн</p>
+              <button
+                class="order-button"
+                data-product="Pomegranate Caramels"
+                data-price="175"
+              >
+                Order Now
+              </button>
+            </div>
+
+            <div class="product" data-price="190">
+              <img
+                src="./Project_2.turm/jersey_caramel_loose__62284.jpg"
+                alt="Jersey Caramels"
+              />
+              <h3>Jersey Caramels</h3>
+              <p class="product-price">190 грн</p>
+              <button
+                class="order-button"
+                data-product="Jersey Caramels"
+                data-price="190"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="order-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Order</h2>
+        <p id="modal-product-name"></p>
+        <p id="modal-product-price"></p>
+        <form id="order-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="quantity">Quantity:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1"
+            min="1"
+            required
+          /><br /><br />
+
+          <button type="submit">Order</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const minPriceInput = document.getElementById("min-price");
+      const maxPriceInput = document.getElementById("max-price");
+      const minPriceValue = document.getElementById("min-price-value");
+      const maxPriceValue = document.getElementById("max-price-value");
+      const applyFilterButton = document.getElementById("apply-filter");
+      const productGrid = document.getElementById("product-grid");
+      const modal = document.getElementById("order-modal");
+      const closeButton = document.querySelector(".close-button");
+      const modalProductName = document.getElementById("modal-product-name");
+      const modalProductPrice = document.getElementById("modal-product-price");
+      const orderForm = document.getElementById("order-form");
+
+      const newOrderButtons = productGrid.querySelectorAll(".order-button");
+      newOrderButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const product = button.dataset.product;
+          const price = button.dataset.price;
+
+          modalProductName.textContent = `Product: ${product}`;
+          modalProductPrice.textContent = `Price: ${price} грн`;
+          modal.style.display = "block";
+        });
+      });
+
+      minPriceInput.addEventListener("input", () => {
+        minPriceValue.textContent = minPriceInput.value;
+      });
+
+      maxPriceInput.addEventListener("input", () => {
+        maxPriceValue.textContent = maxPriceInput.value;
+      });
+
+      applyFilterButton.addEventListener("click", () => {
+        const minPrice = parseInt(minPriceInput.value);
+        const maxPrice = parseInt(maxPriceInput.value);
+
+        const filteredProducts = Array.from(productGrid.children).filter(
+          (productDiv) => {
+            const productPrice = parseInt(productDiv.dataset.price);
+            return productPrice >= minPrice && productPrice <= maxPrice;
+          }
+        );
+
+        productGrid.innerHTML = "";
+        filteredProducts.forEach((productDiv) => {
+          productGrid.appendChild(productDiv);
+        });
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      orderForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Order placed!");
+        modal.style.display = "none";
+        orderForm.reset();
+      });
+    </script>
+  </body>
+</html>
