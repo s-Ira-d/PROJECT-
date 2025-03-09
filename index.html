@@ -3,9 +3,278 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sweets</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        background-color: midnightblue;
+        padding: 20px 0;
+        color: #fff;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-container img {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .nav-list li {
+        margin-left: 20px;
+      }
+
+      .nav-list a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+
+      .nav-list a:hover {
+        color: #ccc;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+      }
+
+      .product {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .product h3 {
+        margin-bottom: 10px;
+      }
+
+      .product a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s ease;
+      }
+
+      .product a:hover {
+        color: #007bff;
+      }
+
+      .mosaic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+      }
+
+      .mosaic-item {
+        position: relative;
+        overflow: hidden;
+        width: 30%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .mosaic-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .mosaic-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .contact-form label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      .about-container {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .about-image {
+        width: 200px;
+        margin-right: 20px;
+        border-radius: 5px;
+      }
+
+      .about-text {
+        flex-grow: 1;
+      }
+
+      .about-images {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+      }
+
+      .about-images img {
+        margin-bottom: 10px;
+      }
+      #products {
+        background-image: url("./Project_2.turm/IMG_6485.jpg.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 40px 0;
+        filter: brightness(80%);
+      }
+    </style>
   </head>
   <body>
-    <h1>Привіт!</h1>
+    <header class="header">
+      <div class="container">
+        <div class="logo-container">
+          <img src="./Project_2.turm/2025-02-25 21.49.21.jpg" alt="Logo" />
+          <div class="logo">Sweets</div>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="./index2.html" class="lang-link">Eng</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="products" class="products">
+      <div class="container">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+          <div class="product">
+            <h3><a href="chocolatebars.html">Chocolate Bars</a></h3>
+          </div>
+          <div class="product">
+            <h3><a href="gummybears.html">Gummy Bears</a></h3>
+          </div>
+          <div class="product">
+            <h3><a href="lollipops.html">Lollipops</a></h3>
+          </div>
+          <div class="product">
+            <h3><a href="caramels.html">Caramels</a></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <div class="about-container">
+          <div class="about-images">
+            <img
+              src="./Project_2.turm/istockphoto-1327093724-1024x1024.jpg"
+              alt=""
+              class="about-image"
+            />
+            <img
+              src="./Project_2.turm/istockphoto-522735736-1024x1024.jpg"
+              alt=""
+              class="about-image"
+            />
+          </div>
+          <div class="about-text">
+            <p>
+              We create sweets that bring joy! From chocolate bars to lollipops,
+              gummy bears, and caramels, we have something for everyone. Quality
+              is our priority, and happy customers are our goal.
+            </p>
+            <p>Thank you for choosing <strong>Sweets</strong>!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form action="#" method="post" class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </section>
   </body>
 </html>
