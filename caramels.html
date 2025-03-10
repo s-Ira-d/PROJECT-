@@ -119,8 +119,16 @@
       }
 
       /* Адаптивні стилі */
+      @media screen and (max-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(
+            3,
+            1fr
+          ); /* 3 стовпці для середніх екранів */
+        }
+      }
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         .product-grid {
           grid-template-columns: repeat(
             2,
@@ -138,7 +146,7 @@
         }
       }
 
-      @media (max-width: 480px) {
+      @media screen and (max-width: 480px) {
         .product-grid {
           grid-template-columns: 1fr; /* 1 стовпець для маленьких екранів */
         }
