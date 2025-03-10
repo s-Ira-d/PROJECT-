@@ -6,6 +6,77 @@
     <title>Caramels</title>
     <link rel="stylesheet" href="./css/style.css" />
     <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        background-color: midnightblue;
+        padding: 20px 0;
+        color: #fff;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+      }
+
+      .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-list li {
+        margin: 0 20px;
+      }
+
+      .nav-list a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .products {
+        padding: 40px 0;
+      }
+
+      .products h2 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .filter {
+        width: 250px;
+        min-width: 190px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
       .product {
         display: block;
         margin: 10px;
@@ -22,10 +93,28 @@
         object-fit: cover;
       }
 
-      .product-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+      .product h3 {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .product-price {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .order-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .order-button:hover {
+        background-color: #0056b3;
       }
 
       @media (max-width: 1200px) {
@@ -38,23 +127,73 @@
         .product-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+
+        .filter-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .filter {
+          width: 100%;
+        }
       }
 
       @media (max-width: 500px) {
         .product-grid {
           grid-template-columns: 1fr;
         }
+
+        .product img {
+          height: auto;
+        }
+
+        .filter-container {
+          flex-direction: column;
+        }
+
+        .product {
+          padding: 10px;
+        }
+
+        .order-button {
+          width: 100%;
+          padding: 12px;
+        }
       }
 
-      .filter-container {
-        display: flex;
-        gap: 20px;
-        justify-content: space-between;
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
       }
 
-      .filter {
-        width: 250px;
-        min-width: 190px;
+      .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        width: 400px;
+        max-width: 100%;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #order-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
       }
     </style>
   </head>
@@ -158,10 +297,7 @@
             </div>
 
             <div class="product" data-price="180">
-              <img
-                src="./images/caramels5.jpg.webp"
-                alt="Vanila Caramels"
-              />
+              <img src="./images/caramels5.jpg.webp" alt="Vanila Caramels" />
               <h3>Vanila Caramels</h3>
               <p class="product-price">180 грн</p>
               <button
@@ -174,10 +310,7 @@
             </div>
 
             <div class="product" data-price="210">
-              <img
-                src="./images/caramels6.jpeg"
-                alt="Strawberry Caramels"
-              />
+              <img src="./images/caramels6.jpeg" alt="Strawberry Caramels" />
               <h3>Strawberry Caramels</h3>
               <p class="product-price">210 грн</p>
               <button
@@ -190,10 +323,7 @@
             </div>
 
             <div class="product" data-price="190">
-              <img
-                src="./images/caramels7.jpeg"
-                alt="Raspberry Caramels"
-              />
+              <img src="./images/caramels7.jpeg" alt="Raspberry Caramels" />
               <h3>Raspberry Caramels</h3>
               <p class="product-price">190 грн</p>
               <button
@@ -206,10 +336,7 @@
             </div>
 
             <div class="product" data-price="220">
-              <img
-                src="./images/caramels8.jpg"
-                alt="Apple Caramels"
-              />
+              <img src="./images/caramels8.jpg" alt="Apple Caramels" />
               <h3>Apple Caramels</h3>
               <p class="product-price">220 грн</p>
               <button
@@ -222,10 +349,7 @@
             </div>
 
             <div class="product" data-price="165">
-              <img
-                src="./images/caramels9.jpeg.webp"
-                alt="Banana Caramels"
-              />
+              <img src="./images/caramels9.jpeg.webp" alt="Banana Caramels" />
               <h3>Banana Caramels</h3>
               <p class="product-price">165 грн</p>
               <button
@@ -238,10 +362,7 @@
             </div>
 
             <div class="product" data-price="200">
-              <img
-                src="./images/caramels10.jpg.webp"
-                alt="Orange Caramels"
-              />
+              <img src="./images/caramels10.jpg.webp" alt="Orange Caramels" />
               <h3>Orange Caramels</h3>
               <p class="product-price">200 грн</p>
               <button
@@ -254,10 +375,7 @@
             </div>
 
             <div class="product" data-price="175">
-              <img
-                src="./images/caramels11.jpg"
-                alt="Pomegranate Caramels"
-              />
+              <img src="./images/caramels11.jpg" alt="Pomegranate Caramels" />
               <h3>Pomegranate Caramels</h3>
               <p class="product-price">175 грн</p>
               <button
@@ -270,10 +388,7 @@
             </div>
 
             <div class="product" data-price="190">
-              <img
-                src="./images/caramels12.jpg"
-                alt="Jersey Caramels"
-              />
+              <img src="./images/caramels12.jpg" alt="Jersey Caramels" />
               <h3>Jersey Caramels</h3>
               <p class="product-price">190 грн</p>
               <button
