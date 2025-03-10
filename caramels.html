@@ -118,54 +118,31 @@
         background-color: #0056b3;
       }
 
-      /* Адаптивні стилі */
+      /* За замовчуванням 4 стовпці */
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      /* Для екранів до 1200px (3 стовпці) */
       @media (max-width: 1200px) {
         .product-grid {
-          grid-template-columns: repeat(
-            3,
-            1fr
-          ); /* 3 стовпці для середніх екранів */
+          grid-template-columns: repeat(3, 1fr);
         }
       }
 
-      @media (max-width: 768px) {
+      /* Для екранів до 800px (2 стовпці) */
+      @media (max-width: 800px) {
         .product-grid {
-          grid-template-columns: repeat(
-            2,
-            1fr
-          ); /* 2 стовпці для мобільних пристроїв середнього розміру */
-        }
-
-        .filter-container {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .filter {
-          width: 100%;
+          grid-template-columns: repeat(2, 1fr);
         }
       }
 
-      @media (max-width: 480px) {
+      /* Для екранів до 500px (1 стовпець) */
+      @media (max-width: 500px) {
         .product-grid {
-          grid-template-columns: 1fr; /* 1 стовпець для маленьких екранів */
-        }
-
-        .product img {
-          height: auto;
-        }
-
-        .filter-container {
-          flex-direction: column;
-        }
-
-        .product {
-          padding: 10px;
-        }
-
-        .order-button {
-          width: 100%;
-          padding: 12px;
+          grid-template-columns: 1fr;
         }
       }
 
