@@ -6,6 +6,7 @@
     <title>Caramels</title>
     <link rel="stylesheet" href="./css/style.css" />
     <style>
+      /* Загальні стилі */
       body {
         font-family: sans-serif;
         margin: 0;
@@ -117,15 +118,22 @@
         background-color: #0056b3;
       }
 
+      /* Адаптивні стилі */
       @media (max-width: 1200px) {
         .product-grid {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(
+            3,
+            1fr
+          ) !important; /* 3 стовпці для середніх екранів */
         }
       }
 
       @media (max-width: 800px) {
         .product-grid {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ) !important; /* 2 стовпці для мобільних пристроїв середнього розміру */
         }
 
         .filter-container {
@@ -140,7 +148,7 @@
 
       @media (max-width: 500px) {
         .product-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr !important; /* 1 стовпець для маленьких екранів */
         }
 
         .product img {
@@ -161,7 +169,7 @@
         }
       }
 
-      /* Modal styles */
+      /* Модальне вікно */
       .modal {
         display: none;
         position: fixed;
