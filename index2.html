@@ -193,10 +193,30 @@
         padding: 40px 0;
         filter: brightness(80%);
       }
+      @media screen and (min-width: 1024px) {
+        .product-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
 
-      /* Медіа-запити для адаптивності */
+        h2 {
+          font-size: 32px;
+        }
 
-      /* Для маленьких екранів (мобільні пристрої) */
+        .about-container {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+
+        .about-images {
+          flex-direction: column;
+          margin-right: 20px;
+        }
+
+        .about-image {
+          width: 200px;
+          margin-right: 20px;
+        }
+      }
       @media screen and (max-width: 768px) {
         .nav-list {
           flex-direction: column;
@@ -232,7 +252,6 @@
         }
       }
 
-      /* Для дуже маленьких екранів (мобільні телефони в портретному режимі) */
       @media screen and (max-width: 480px) {
         .logo-container {
           flex-direction: column;

@@ -6,7 +6,6 @@
     <title>Lollipops</title>
     <link rel="stylesheet" href="./css/style.css" />
     <style>
-      /* Загальні стилі */
       body {
         font-family: sans-serif;
         margin: 0;
@@ -117,10 +116,74 @@
       .order-button:hover {
         background-color: #0056b3;
       }
+      @media (min-width: 1024px) {
+        .container {
+          padding: 40px;
+        }
 
-      /* Адаптивний дизайн */
+        .header {
+          padding: 30px 0;
+        }
 
-      /* Tablet view */
+        .logo {
+          font-size: 28px;
+          text-align: center;
+        }
+
+        .nav-list {
+          justify-content: center;
+        }
+
+        .nav-list li {
+          margin: 0 20px;
+        }
+
+        .products h2 {
+          font-size: 32px;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+
+        .filter-container {
+          display: flex;
+          gap: 30px;
+          justify-content: space-between;
+        }
+
+        .filter {
+          width: 250px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        }
+
+        .product {
+          padding: 20px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+          height: 220px;
+          object-fit: cover;
+        }
+
+        .product h3 {
+          font-size: 20px;
+          margin-top: 10px;
+        }
+
+        .product-price {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        .order-button {
+          padding: 12px 20px;
+          font-size: 16px;
+        }
+      }
       @media (max-width: 768px) {
         .logo {
           font-size: 20px;
@@ -154,10 +217,9 @@
         }
       }
 
-      /* Мобільний вигляд (max-width: 480px) */
       @media (max-width: 480px) {
         .product-grid {
-          grid-template-columns: 1fr !important; /* Примусово встановлюємо 1 стовпець */
+          grid-template-columns: 1fr !important;
         }
 
         .product img {
@@ -289,10 +351,7 @@
               </button>
             </div>
             <div class="product" data-price="180">
-              <img
-                src="./images/lollipops5.jpg"
-                alt="Caramel Lollipops"
-              />
+              <img src="./images/lollipops5.jpg" alt="Caramel Lollipops" />
               <h3>Caramel Lollipops</h3>
               <p class="product-price">180 грн</p>
               <button
@@ -319,10 +378,7 @@
               </button>
             </div>
             <div class="product" data-price="190">
-              <img
-                src="./images/lollipops7.jpg"
-                alt="Rainbow Lollipops"
-              />
+              <img src="./images/lollipops7.jpg" alt="Rainbow Lollipops" />
               <h3>Rainbow Lollipops</h3>
               <p class="product-price">190 грн</p>
               <button
@@ -388,10 +444,7 @@
               </button>
             </div>
             <div class="product" data-price="190">
-              <img
-                src="./images/lollipops12.jpg"
-                alt="Pomegranate Lollipops"
-              />
+              <img src="./images/lollipops12.jpg" alt="Pomegranate Lollipops" />
               <h3>Pomegranate Lollipops</h3>
               <p class="product-price">190 грн</p>
               <button
