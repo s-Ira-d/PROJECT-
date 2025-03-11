@@ -6,6 +6,78 @@
     <title>Lollipops</title>
     <link rel="stylesheet" href="./css/style.css" />
     <style>
+      /* Загальні стилі */
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        background-color: midnightblue;
+        padding: 20px 0;
+        color: #fff;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+      }
+
+      .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-list li {
+        margin: 0 20px;
+      }
+
+      .nav-list a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .products {
+        padding: 40px 0;
+      }
+
+      .products h2 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .filter {
+        width: 250px;
+        min-width: 190px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
       .product {
         display: block;
         margin: 10px;
@@ -22,39 +94,102 @@
         object-fit: cover;
       }
 
-      .product-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+      .product h3 {
+        font-size: 18px;
+        margin: 10px 0;
       }
 
-      @media (max-width: 1200px) {
-        .product-grid {
-          grid-template-columns: repeat(3, 1fr);
+      .product-price {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .order-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .order-button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Адаптивний дизайн */
+
+      /* Tablet view */
+      @media (max-width: 768px) {
+        .logo {
+          font-size: 20px;
         }
-      }
 
-      @media (max-width: 800px) {
+        .nav-list {
+          flex-direction: column;
+          gap: 10px;
+        }
+
         .product-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-      }
 
-      @media (max-width: 500px) {
-        .product-grid {
-          grid-template-columns: 1fr;
+        .filter-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .filter {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .product img {
+          height: 180px;
+        }
+
+        .product-price {
+          font-size: 14px;
         }
       }
 
-      .filter-container {
-        display: flex;
-        gap: 20px;
-        justify-content: space-between;
-      }
+      /* Мобільний вигляд (max-width: 480px) */
+      @media (max-width: 480px) {
+        .product-grid {
+          grid-template-columns: 1fr !important; /* Примусово встановлюємо 1 стовпець */
+        }
 
-      .filter {
-        width: 250px;
-        min-width: 190px;
+        .product img {
+          height: 160px;
+        }
+
+        .product h3 {
+          font-size: 16px;
+        }
+
+        .product-price {
+          font-size: 12px;
+        }
+
+        .order-button {
+          padding: 8px 15px;
+        }
+
+        .filter-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .filter {
+          width: 100%;
+          max-width: 250px;
+        }
+
+        #order-modal .modal-content {
+          padding: 15px;
+          width: 90%;
+        }
       }
     </style>
   </head>
